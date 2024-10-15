@@ -7,6 +7,9 @@ include_directories(
 )
 
 add_library(SoulEngine
+        src/SoulEngine/Component.h
+        src/SoulEngine/entity.h
+        src/SoulEngine/SoulEngine.h
         src/SoulEngine/core.cpp 
         src/SoulEngine/core.h
 )

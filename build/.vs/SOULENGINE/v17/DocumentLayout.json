@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\engine\\SoulEngine\\build\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F83B097E-499A-3C14-B0B5-CB67909CDEA0}|SoulEngine.vcxproj|D:\\engine\\SoulEngine\\src\\SoulEngine\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83B097E-499A-3C14-B0B5-CB67909CDEA0}|SoulEngine.vcxproj|D:\\engine\\SoulEngine\\src\\SoulEngine\\entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83B097E-499A-3C14-B0B5-CB67909CDEA0}|SoulEngine.vcxproj|D:\\engine\\SoulEngine\\src\\SoulEngine\\SoulEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAA7AF58-3FC0-3C4D-8A0E-F6FFCD960C11}|Demo.vcxproj|D:\\engine\\SoulEngine\\src\\Demo\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F83B097E-499A-3C14-B0B5-CB67909CDEA0}|SoulEngine.vcxproj|D:\\engine\\SoulEngine\\src\\SoulEngine\\core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "D:\\engine\\SoulEngine\\src\\Demo\\Main.cpp",
+              "RelativeDocumentMoniker": "..\\src\\Demo\\Main.cpp",
+              "ToolTip": "D:\\engine\\SoulEngine\\src\\Demo\\Main.cpp",
+              "RelativeToolTip": "..\\src\\Demo\\Main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-08T11:58:22.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SoulEngine.h",
+              "DocumentMoniker": "D:\\engine\\SoulEngine\\src\\SoulEngine\\SoulEngine.h",
+              "RelativeDocumentMoniker": "..\\src\\SoulEngine\\SoulEngine.h",
+              "ToolTip": "D:\\engine\\SoulEngine\\src\\SoulEngine\\SoulEngine.h",
+              "RelativeToolTip": "..\\src\\SoulEngine\\SoulEngine.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T11:58:17.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "entity.h",
+              "DocumentMoniker": "D:\\engine\\SoulEngine\\src\\SoulEngine\\entity.h",
+              "RelativeDocumentMoniker": "..\\src\\SoulEngine\\entity.h",
+              "ToolTip": "D:\\engine\\SoulEngine\\src\\SoulEngine\\entity.h",
+              "RelativeToolTip": "..\\src\\SoulEngine\\entity.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T11:58:14.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "core.h",
+              "DocumentMoniker": "D:\\engine\\SoulEngine\\src\\SoulEngine\\core.h",
+              "RelativeDocumentMoniker": "..\\src\\SoulEngine\\core.h",
+              "ToolTip": "D:\\engine\\SoulEngine\\src\\SoulEngine\\core.h",
+              "RelativeToolTip": "..\\src\\SoulEngine\\core.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T11:58:14.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Component.h",
+              "DocumentMoniker": "D:\\engine\\SoulEngine\\src\\SoulEngine\\Component.h",
+              "RelativeDocumentMoniker": "..\\src\\SoulEngine\\Component.h",
+              "ToolTip": "D:\\engine\\SoulEngine\\src\\SoulEngine\\Component.h",
+              "RelativeToolTip": "..\\src\\SoulEngine\\Component.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T11:58:13.702Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

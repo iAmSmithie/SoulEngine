@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\engine\SoulEngine\build\CMakeFiles\cd73b27ece1b5dcf71c6ff6510ad86b5\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{81606EA1-1E4F-3683-9E40-7F0C7D04C48D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
