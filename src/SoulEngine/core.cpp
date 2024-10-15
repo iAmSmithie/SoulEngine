@@ -22,6 +22,9 @@ namespace SoulEngine
 	}
 	void Core::start()
 	{
-		//for(size_t i = 0; i < 25)
+		for(size_t i = 0; i < 25; i++)
+		{
+
+		}
 	}
 }

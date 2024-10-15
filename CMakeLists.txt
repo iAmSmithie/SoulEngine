@@ -12,6 +12,8 @@ add_library(SoulEngine
         src/SoulEngine/SoulEngine.h
         src/SoulEngine/core.cpp 
         src/SoulEngine/core.h
+        src/SoulEngine/Entity.cpp
+        src/SoulEngine/Component.cpp
 )
 
 add_executable(Demo

@@ -4,6 +4,7 @@
 namespace SoulEngine
 {
 	struct Core;
+	struct Component;
 
 	struct Entity
 	{
@@ -11,7 +12,10 @@ namespace SoulEngine
 		std::shared_ptr<T> add_component()
 		{
 			std::shared_ptr<T> rtn = std::make_shared<T>();
-			m_components.push_back(rtn);
+
+			rtn->m_Entity = m_self;
+			rtn->on_initialize();
+			m_Components.push_back(rtn);
 
 			return rtn;
 		}
@@ -19,6 +23,9 @@ namespace SoulEngine
 		friend struct SoulEngine::Core;
 
 		std::weak_ptr<Core> m_Core;
-		std::vector<std::shared_ptr<Component> > m_components;
+		std::weak_ptr<Entity> m_self;
+		std::vector<std::shared_ptr<Component> > m_Components;
+
+		void tick();
 	};
 }

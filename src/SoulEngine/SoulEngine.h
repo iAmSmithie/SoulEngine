@@ -3,5 +3,6 @@
 
 #include <SoulEngine/core.h>
 #include <SoulEngine/entity.h>
+#include <SoulEngine/component.h>
 
 #endif

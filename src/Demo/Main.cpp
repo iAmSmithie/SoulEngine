@@ -3,9 +3,16 @@
 
 using namespace SoulEngine;
 
-struct Test
+struct Player : Component
 {
-	int m_temp;
+	void on_initialize() //override
+	{
+		std::cout << "Player initialized" << std::endl;
+	}
+	void on_tick() //override
+	{
+		std::cout << "Player ticked" << std::endl;
+	}
 };
 
 int main()
@@ -13,9 +20,10 @@ int main()
   std::shared_ptr<Core> c = Core::initialize();
 
   std::shared_ptr<Entity> ent = c->add_entity();
-  ent->add_component<Test>();
+  std::shared_ptr<Player> p = ent->add_component<Player>();
+  ent->add_component<Player>();
 
-  //Core->start();
+  Core::initialize()->start();
 
 
 
