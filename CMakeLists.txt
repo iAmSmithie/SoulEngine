@@ -18,6 +18,7 @@ add_library(Rendy
  src/Rendy/Texture.h
  src/Rendy/Mesh.cpp
  src/Rendy/Texture.cpp
+ src/Rendy/Rend.h
 )
 
 target_link_libraries(Rendy SDL2 SDL2main glew32 OpenGL32)
@@ -30,6 +31,8 @@ add_library(SoulEngine
         src/SoulEngine/core.h
         src/SoulEngine/Entity.cpp
         src/SoulEngine/Component.cpp
+        src/SoulEngine/Window.h
+        src/SoulEngine/Window.cpp
 )
 
 target_link_libraries(SoulEngine Rendy)
@@ -41,4 +44,4 @@ add_executable(Demo
 )
 
 
-target_link_libraries(Demo SoulEngine)
+target_link_libraries(Demo Rendy SoulEngine)
