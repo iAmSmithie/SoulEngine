@@ -16,10 +16,11 @@ namespace SoulEngine
 		Rendy::Face face;
 		Rendy::Shader shader;
 
-		face.a.position = glm::vec3(0.0f, 0.5f, 0.0f);
-		face.b.position = glm::vec3(-0.5f, -0.5f, 0.0f);
-		face.c.position = glm::vec3(0.5f, -0.5f, 0.0f);
+		face.a.position = glm::vec3(0.0f, 1.0f, 0.0f);
+		face.b.position = glm::vec3(-1.0f, -1.0f, 0.0f);
+		face.c.position = glm::vec3(1.0f, -1.0f, 0.0f);
 		mesh.addFaces(face);
+
 
 		glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
 		glm::mat4 view(1.0f);
@@ -31,7 +32,6 @@ namespace SoulEngine
 
 		glUseProgram(shader.id());
 		glBindVertexArray(mesh.vao_id());
-		// bind texture
 		glBindTexture(GL_TEXTURE_2D, m_tex->m_texture->id());
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		//printf("Render meeeeeee");
