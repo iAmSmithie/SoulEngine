@@ -19,6 +19,7 @@ add_library(Rendy
  src/Rendy/Mesh.cpp
  src/Rendy/Texture.cpp
  src/Rendy/Rend.h
+ src/Rendy/Shader.cpp
 )
 
 target_link_libraries(Rendy SDL2 SDL2main glew32 OpenGL32)
@@ -33,6 +34,18 @@ add_library(SoulEngine
         src/SoulEngine/Component.cpp
         src/SoulEngine/Window.h
         src/SoulEngine/Window.cpp
+        src/SoulEngine/TriangleRenderer.cpp
+        src/SoulEngine/TriangleRenderer.h
+        src/SoulEngine/Resources.cpp
+        src/SoulEngine/Resources.h
+        src/SoulEngine/Resource.cpp
+        src/SoulEngine/Resource.h
+        src/soulEngine/Texture.cpp
+        src/soulEngine/Texture.h
+        src/SoulEngine/Model.cpp
+        src/SoulEngine/Model.h
+        src/SoulEngine/Shader.cpp
+        src/SoulEngine/Shader.h
 )
 
 target_link_libraries(SoulEngine Rendy)

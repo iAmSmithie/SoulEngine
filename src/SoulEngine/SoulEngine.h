@@ -1,9 +1,12 @@
 #ifndef SOULENGINE_SOULENGINE_
 #define SOULENGINE_SOULENGINE_
 
-#include <SoulEngine/core.h>
-#include <SoulEngine/entity.h>
-#include <SoulEngine/component.h>
+#include "core.h"
+#include "entity.h"
+#include "component.h"
+#include "TriangleRenderer.h"
+#include "Resources.h"
+#include "Texture.h"
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>

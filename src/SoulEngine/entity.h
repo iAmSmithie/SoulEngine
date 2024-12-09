@@ -27,5 +27,8 @@ namespace SoulEngine
 		std::vector<std::shared_ptr<Component> > m_Components;
 
 		void tick();
+
+		void render();
+
 	};
 }

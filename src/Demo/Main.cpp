@@ -18,14 +18,17 @@ struct Player : Component
 int main(int argc, char* argv[])
 {
   std::shared_ptr<Core> c = Core::initialize();
-
   std::shared_ptr<Entity> ent = c->add_entity();
   std::shared_ptr<Player> p = ent->add_component<Player>();
+  std::shared_ptr<triangleRender> t = ent->add_component<triangleRender>();
+  std::shared_ptr<Texture> tex = c->get_resources()->load<Texture>("textures/test");
+  t->set_texture(tex);
   ent->add_component<Player>();
 
+
+  
+
   c->start();
-
-
 
   return 0;
 }

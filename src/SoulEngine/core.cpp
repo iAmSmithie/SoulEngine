@@ -1,7 +1,7 @@
 #include "core.h"
 #include "entity.h"
 #include "Window.h"
-#include <SoulEngine/SoulEngine.h>
+#include "Resources.h"
 #include <iostream>
 
 namespace SoulEngine
@@ -10,6 +10,7 @@ namespace SoulEngine
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
 		rtn->m_window = std::make_shared<Window>();
+		rtn->m_resources = std::make_shared<Resources>();
 		rtn->m_self = rtn;
 		return rtn;
 	}
@@ -22,6 +23,10 @@ namespace SoulEngine
 		std::cout << rtn->m_Core.lock().get() << std::endl;
 
 		return rtn;
+	}
+	std::shared_ptr<Resources> Core::get_resources()
+	{
+		return m_resources;
 	}
 	void Core::start()
 	{
@@ -43,9 +48,23 @@ namespace SoulEngine
 					m_entities[ei]->tick();
 				}
 			}
+
+			glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			//glEnable(GL_DEPTH_TEST);
+			//glEnable(GL_CULL_FACE);
+
+			for (size_t i = 0; i < m_entities.size(); i++)
+			{
+				for (size_t ei = 0; ei < m_entities.size(); ei++)
+				{
+					m_entities[ei]->render();
+				}
+			}
+
+
+			SDL_GL_SwapWindow(m_window->m_window);
+
 		}
-
-
-
 	}
 }

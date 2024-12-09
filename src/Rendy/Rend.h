@@ -1,10 +1,10 @@
-#ifndef SOULENGINE_SOULENGINE_
-#define SOULENGINE_SOULENGINE_
+#ifndef RENDY_RENDY_
+#define RENDY_RENDY_
 
-#include <Rendy/Mesh.h>
-#include <Rendy/Shader.h>
-#include <Rendy/Texture.h>
-#include <Rendy/Model.h>
+#include "Mesh.h"
+#include "Shader.h"
+#include "Texture.h"
+#include "Model.h"
 
 #include <exception>
 
@@ -12,5 +12,8 @@
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <glm/stb_image.h>
+#include <glm/gtc/type_ptr.hpp>
+#include <vector>
+#include <stdexcept>
 
 #endif

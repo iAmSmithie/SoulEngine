@@ -2,12 +2,14 @@
 
 namespace SoulEngine
 {
+	struct Core;
 	struct Window
 	{
 		Window();
 		~Window();
 
 	private:
+		friend struct SoulEngine::Core;
 		SDL_Window* m_window;
 		SDL_GLContext m_context;
 
