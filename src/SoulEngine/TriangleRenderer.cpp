@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <Rendy/Rend.h>
 #include "Texture.h"
+#include "Model.h"
 
 namespace SoulEngine
 {
@@ -10,15 +11,22 @@ namespace SoulEngine
 	{
 		m_tex = tex;
 	}
+	void SoulEngine::triangleRender::set_model(std::shared_ptr<Model> mod)
+	{
+		m_mod = mod;
+	}
 	void triangleRender::on_render()
 	{
 		Rendy::Mesh mesh;
 		Rendy::Face face;
 		Rendy::Shader shader;
 
-		face.a.position = glm::vec3(0.0f, 1.0f, 0.0f);
-		face.b.position = glm::vec3(-1.0f, -1.0f, 0.0f);
-		face.c.position = glm::vec3(1.0f, -1.0f, 0.0f);
+		face.a.position = glm::vec3(0.0f, 0.5f, 0.0f);
+		face.b.position = glm::vec3(-0.5f, -0.5f, 0.0f);
+		face.c.position = glm::vec3(0.5f, -0.5f, 0.0f);
+		face.a.texcoord = glm::vec2(0.5f, 0.0f);
+		face.b.texcoord = glm::vec2(0.0f, 1.0f);
+		face.c.texcoord = glm::vec2(1.0f, 1.0f);
 		mesh.addFaces(face);
 
 

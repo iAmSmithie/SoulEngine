@@ -21,8 +21,10 @@ int main(int argc, char* argv[])
   std::shared_ptr<Entity> ent = c->add_entity();
   std::shared_ptr<Player> p = ent->add_component<Player>();
   std::shared_ptr<triangleRender> t = ent->add_component<triangleRender>();
-  std::shared_ptr<Texture> tex = c->get_resources()->load<Texture>("textures/marker");
+  std::shared_ptr<Texture> tex = c->get_resources()->load<Texture>("textures/bmarker");
+  std::shared_ptr<Model> mod = c->get_resources()->load<Model>("models/maxwell/source/catu");
   t->set_texture(tex);
+  t->set_model(mod);
   ent->add_component<Player>();
 
 

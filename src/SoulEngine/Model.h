@@ -4,10 +4,12 @@
 
 namespace SoulEngine
 {
+	struct triangleRender;
 	struct Model : Resource
 	{
-		void onLoad();
+		void on_load();
 	private:
+		friend struct SoulEngine::triangleRender;
 		std::shared_ptr<Rendy::Model> m_model;
 	};
 }
