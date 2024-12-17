@@ -7,6 +7,7 @@
 #include "TriangleRenderer.h"
 #include "Resources.h"
 #include "Texture.h"
+#include "Model.h"
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>

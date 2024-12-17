@@ -46,6 +46,8 @@ add_library(SoulEngine
         src/SoulEngine/Model.h
         src/SoulEngine/Shader.cpp
         src/SoulEngine/Shader.h
+        src/SoulEngine/Transform.cpp
+        src/SoulEngine/Transform.h
 )
 
 target_link_libraries(SoulEngine Rendy)

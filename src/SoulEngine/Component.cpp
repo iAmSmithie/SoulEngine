@@ -14,4 +14,8 @@ namespace SoulEngine
 	{
 		on_render();
 	}
+	std::shared_ptr<Entity> Component::get_entity() const
+	{
+		return m_Entity.lock();
+	}
 }

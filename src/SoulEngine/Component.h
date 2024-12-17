@@ -14,6 +14,7 @@ namespace SoulEngine
 		virtual void on_initialize();
 		virtual void on_tick();
 		virtual void on_render();
+		std::shared_ptr<Entity> get_entity() const;
 	private:
 		friend struct SoulEngine::Entity;
 
