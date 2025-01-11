@@ -1,5 +1,6 @@
 #include <memory>
 #include <vector>
+#include "Transform.h"
 
 namespace SoulEngine
 {
@@ -19,6 +20,18 @@ namespace SoulEngine
 
 			return rtn;
 		}
+		template <typename T>
+		std::shared_ptr<T> get_component()
+		{
+			for (auto& comp : m_Components)
+			{
+				if (std::dynamic_pointer_cast<T>(comp))
+				{
+					return std::dynamic_pointer_cast<T>(comp);
+				}
+			}
+			return nullptr;
+		}
 	private:
 		friend struct SoulEngine::Core;
 
@@ -26,9 +39,9 @@ namespace SoulEngine
 		std::weak_ptr<Entity> m_self;
 		std::vector<std::shared_ptr<Component> > m_Components;
 
+		Transform transform;
+
 		void tick();
-
 		void render();
-
 	};
 }

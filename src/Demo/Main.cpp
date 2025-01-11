@@ -5,13 +5,13 @@ using namespace SoulEngine;
 
 struct Player : Component
 {
-	void on_initialize() //override
+	void on_initialize()
 	{
 		std::cout << "Player initialized" << std::endl;
 	}
-	void on_tick() //override
+	void on_tick()
 	{
-		std::cout << "Player ticked" << std::endl;
+		//std::cout << "Player ticked" << std::endl;
 	}
 };
 
@@ -26,10 +26,7 @@ int main(int argc, char* argv[])
   std::shared_ptr<Model> mod = c->get_resources()->load<Model>("models/OIAE/source/OIAEE");
   t->set_texture(tex);
   t->set_model(mod);
-  ent->add_component<Player>();
-
-
-  
+  ent->get_component<Transform>()->set_position(glm::vec3(0, 0, -50));
 
   c->start();
 

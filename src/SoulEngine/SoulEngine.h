@@ -8,6 +8,7 @@
 #include "Resources.h"
 #include "Texture.h"
 #include "Model.h"
+#include "Transform.h"
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>

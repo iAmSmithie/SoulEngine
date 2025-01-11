@@ -5,9 +5,8 @@
 
 namespace SoulEngine
 {
-
 	struct Entity;
-
+	struct Transform;
 
 	struct Component
 	{
@@ -15,6 +14,7 @@ namespace SoulEngine
 		virtual void on_tick();
 		virtual void on_render();
 		std::shared_ptr<Entity> get_entity() const;
+		std::shared_ptr<Transform> get_transform();
 	private:
 		friend struct SoulEngine::Entity;
 

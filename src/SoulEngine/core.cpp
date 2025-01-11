@@ -2,7 +2,9 @@
 #include "entity.h"
 #include "Window.h"
 #include "Resources.h"
+#include "Transform.h"
 #include <iostream>
+#include "Transform.cpp"
 
 namespace SoulEngine
 {
@@ -18,6 +20,8 @@ namespace SoulEngine
 	{
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 		rtn->m_Core = m_self;
+		rtn->m_self = rtn;
+		rtn->add_component<Transform>();
 		m_entities.push_back(rtn);
 
 		std::cout << rtn->m_Core.lock().get() << std::endl;
@@ -28,6 +32,7 @@ namespace SoulEngine
 	{
 		return m_resources;
 	}
+
 	void Core::start()
 	{
 		bool quit = false;
@@ -40,9 +45,18 @@ namespace SoulEngine
 				{
 					quit = true;
 				}
+				if (e.type == SDL_KEYDOWN)
+				{
+					std::cout << "Key pressed: " << SDL_GetKeyName(e.key.keysym.sym) << std::endl;
+				}
 			}
 			for (size_t i = 0; i < m_entities.size(); i++)
 			{
+				auto transform = m_entities[i]->get_component<Transform>();
+				if (transform)
+				{
+					SoulEngine::input(e, *transform);
+				}
 				for (size_t ei = 0; ei < m_entities.size(); ei++)
 				{
 					m_entities[ei]->tick();
@@ -61,7 +75,6 @@ namespace SoulEngine
 					m_entities[ei]->render();
 				}
 			}
-
 
 			SDL_GL_SwapWindow(m_window->m_window);
 

@@ -1,4 +1,6 @@
 #include "Component.h"
+#include "Transform.h"
+#include "Entity.h"
 
 namespace SoulEngine
 {
@@ -16,6 +18,24 @@ namespace SoulEngine
 	}
 	std::shared_ptr<Entity> Component::get_entity() const
 	{
-		return m_Entity.lock();
+		auto entity = m_Entity.lock();
+		if (!entity)
+		{
+			throw std::runtime_error("Component's entity is null");
+		}
+		return entity;
+	}
+	std::shared_ptr<Transform> Component::get_transform()
+	{
+		auto entity = get_entity();
+		if (!entity) {
+			throw std::runtime_error("Entity is null in getTransform()");
+		}
+		auto transform = entity->get_component<Transform>();
+		if (!transform) 
+		{
+			throw std::runtime_error("Transform component is missing in getTransform()");
+		}
+		return transform;
 	}
 }
