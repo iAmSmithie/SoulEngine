@@ -28,6 +28,8 @@ int main(int argc, char* argv[])
   std::shared_ptr<Audio> audio = c->get_resources()->load<Audio>("audio/OIAEE");
   std::shared_ptr<AudioSource> audioSource = ent->add_component<AudioSource>();
   audioSource->set_audio(audio);
+  //audioSource->setLoop(true);
+
 
 
   t->set_texture(tex);
