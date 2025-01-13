@@ -24,6 +24,12 @@ int main(int argc, char* argv[])
   std::shared_ptr<Texture> tex = c->get_resources()->load<Texture>("textures/OIAEEE");
   //std::shared_ptr<Model> mod = c->get_resources()->load<Model>("models/maxwell/source/smolcat");
   std::shared_ptr<Model> mod = c->get_resources()->load<Model>("models/OIAE/source/OIAEE");
+
+  std::shared_ptr<Audio> audio = c->get_resources()->load<Audio>("audio/OIAEE");
+  std::shared_ptr<AudioSource> audioSource = ent->add_component<AudioSource>();
+  audioSource->set_audio(audio);
+
+
   t->set_texture(tex);
   t->set_model(mod);
   ent->get_component<Transform>()->set_position(glm::vec3(0, 0, -50));

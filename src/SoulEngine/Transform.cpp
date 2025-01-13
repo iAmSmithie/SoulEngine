@@ -5,8 +5,8 @@ namespace SoulEngine
 {
     static void input(const SDL_Event& event, SoulEngine::Transform& transform)
     {
-        const float moveSpeed = 1.0f;
-        const float rotateSpeed = 1.0f;
+        float moveSpeed = 5.0f;
+        float rotateSpeed = 10.0f;
         const Uint8* keyState = SDL_GetKeyboardState(nullptr);
 
         //Movement

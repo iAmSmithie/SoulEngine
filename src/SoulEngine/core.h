@@ -7,6 +7,7 @@ namespace SoulEngine
 	struct Window;
 	struct Resource;
 	struct Resources;
+	struct Audio;
 
 	struct Core
 	{
@@ -18,6 +19,7 @@ namespace SoulEngine
 	private:
 		std::shared_ptr<Window> m_window;
 		std::shared_ptr<Resources> m_resources;
+		std::shared_ptr<Audio> m_audio;
 
 		std::vector<std::shared_ptr<Entity> > m_entities;
 

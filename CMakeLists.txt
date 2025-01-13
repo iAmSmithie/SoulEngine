@@ -22,7 +22,7 @@ add_library(Rendy
  src/Rendy/Shader.cpp
 )
 
-target_link_libraries(Rendy SDL2 SDL2main glew32 OpenGL32)
+target_link_libraries(Rendy SDL2 SDL2main glew32 OpenGL32 OpenAL32)
 
 add_library(SoulEngine
         src/SoulEngine/Component.h
@@ -48,6 +48,10 @@ add_library(SoulEngine
         src/SoulEngine/Shader.h
         src/SoulEngine/Transform.cpp
         src/SoulEngine/Transform.h
+        src/SoulEngine/Audio.cpp
+        src/SoulEngine/Audio.h
+        src/SoulEngine/AudioSource.cpp
+        src/SoulEngine/AudioSource.h
 )
 
 target_link_libraries(SoulEngine Rendy)

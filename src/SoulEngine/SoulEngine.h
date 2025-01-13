@@ -9,6 +9,7 @@
 #include "Texture.h"
 #include "Model.h"
 #include "Transform.h"
+#include "AudioSource.h"
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
