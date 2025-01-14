@@ -30,12 +30,12 @@ namespace SoulEngine
             transform.set_position(transform.get_position() + glm::vec3(moveSpeed, 0.0f, 0.0f));
             std::cout << "D" << std::endl;
         }
-        if (keyState[SDL_SCANCODE_R])
+        if (keyState[SDL_SCANCODE_SPACE])
         {
             transform.set_position(transform.get_position() + glm::vec3(0.0f, moveSpeed, 0.0f));
             std::cout << "R" << std::endl;
         }
-        if (keyState[SDL_SCANCODE_F])
+        if (keyState[SDL_SCANCODE_LSHIFT])
         {
             transform.set_position(transform.get_position() + glm::vec3(0.0f, -moveSpeed, 0.0f));
             std::cout << "F" << std::endl;

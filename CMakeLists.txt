@@ -5,6 +5,7 @@ project(SOULENGINE)
 include_directories(
     src
     contrib/cl-windows-x86_64/include
+    contrib/include
 )
 
 link_directories(

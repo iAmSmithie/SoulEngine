@@ -7,11 +7,10 @@ namespace SoulEngine
 {
     struct Audio : Resource
     {
-        Audio(const std::string& path) : m_path(path) {}
         void on_load();
+		void on_destroy();
     private:
         friend struct SoulEngine::AudioSource;
-        std::string m_path;
-        std::shared_ptr<SoulEngine::Audio> m_audio;
+        ALuint id;
     };
 }

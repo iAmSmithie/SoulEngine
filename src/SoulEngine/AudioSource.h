@@ -1,5 +1,7 @@
 #include "Component.h"
 #include <vector>
+#include <AL/al.h>
+#include <AL/alc.h>
 #pragma once
 
 namespace SoulEngine
@@ -8,9 +10,10 @@ namespace SoulEngine
 	struct AudioSource : Component
 	{
 	public:
-		//void load_ogg(const std::string&, std::vector<unsigned char>&, ALenum&, ALsizei&);
+		void on_initialize();
 		void set_audio(std::shared_ptr<Audio> audio);
 	private:
+		ALuint id;
 		std::shared_ptr<Audio> m_audio;
 	};
 }

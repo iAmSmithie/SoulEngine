@@ -5,12 +5,39 @@
 #include "Transform.h"
 #include <iostream>
 #include "Transform.cpp"
+#include <AL/al.h>
+#include <AL/alc.h>
 
 namespace SoulEngine
 {
 	std::shared_ptr<Core> Core::initialize()
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
+
+		ALCdevice* device = alcOpenDevice(NULL);
+
+		if (!device)
+		{
+			throw std::runtime_error("Failed to open audio device");
+		}
+
+		ALCcontext* context = alcCreateContext(device, NULL);
+
+		if (!context)
+		{
+			alcCloseDevice(device);
+			throw std::runtime_error("Failed to create audio context");
+		}
+
+		if (!alcMakeContextCurrent(context))
+		{
+			alcDestroyContext(context);
+			alcCloseDevice(device);
+			throw std::runtime_error("Failed to make context current");
+		}
+
+		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
+
 		rtn->m_window = std::make_shared<Window>();
 		rtn->m_resources = std::make_shared<Resources>();
 		rtn->m_self = rtn;
@@ -62,6 +89,8 @@ namespace SoulEngine
 					m_entities[ei]->tick();
 				}
 			}
+
+			
 
 			glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
