@@ -79,7 +79,7 @@ namespace SoulEngine
 			}
 			for (size_t i = 0; i < m_entities.size(); i++)
 			{
-				auto transform = m_entities[i]->get_component<Transform>();
+				auto transform = m_entities[0]->get_component<Transform>();
 				if (transform)
 				{
 					SoulEngine::input(e, *transform);
