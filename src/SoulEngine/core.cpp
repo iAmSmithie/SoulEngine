@@ -10,6 +10,7 @@
 
 namespace SoulEngine
 {
+	//initialise the openAL, window, resources and core
 	std::shared_ptr<Core> Core::initialize()
 	{
 		std::shared_ptr<Core> rtn = std::make_shared<Core>();
@@ -43,6 +44,7 @@ namespace SoulEngine
 		rtn->m_self = rtn;
 		return rtn;
 	}
+	//add entity to the core
 	std::shared_ptr<Entity> Core::add_entity()
 	{
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
@@ -60,6 +62,7 @@ namespace SoulEngine
 		return m_resources;
 	}
 
+	//game loop
 	void Core::start()
 	{
 		bool quit = false;
@@ -72,11 +75,14 @@ namespace SoulEngine
 				{
 					quit = true;
 				}
+				//checks for keypresses
 				if (e.type == SDL_KEYDOWN)
 				{
-					std::cout << "Key pressed: " << SDL_GetKeyName(e.key.keysym.sym) << std::endl;
+					//uncomment for keypress debug
+					//std::cout << "Key pressed: " << SDL_GetKeyName(e.key.keysym.sym) << std::endl;
 				}
 			}
+			//input and tick for all entities
 			for (size_t i = 0; i < m_entities.size(); i++)
 			{
 				auto transform = m_entities[0]->get_component<Transform>();
@@ -90,13 +96,13 @@ namespace SoulEngine
 				}
 			}
 
-			
-
+			//openGL clear screen, enable depth and cull. set background colour to white
 			glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			glEnable(GL_DEPTH_TEST);
 			glEnable(GL_CULL_FACE);
 
+			//render all entities
 			for (size_t i = 0; i < m_entities.size(); i++)
 			{
 				for (size_t ei = 0; ei < m_entities.size(); ei++)
@@ -104,7 +110,7 @@ namespace SoulEngine
 					m_entities[ei]->render();
 				}
 			}
-
+			//swap the window
 			SDL_GL_SwapWindow(m_window->m_window);
 
 		}

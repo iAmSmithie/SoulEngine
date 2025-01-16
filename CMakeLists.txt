@@ -35,9 +35,8 @@ add_library(SoulEngine
         src/SoulEngine/Component.cpp
         src/SoulEngine/Window.h
         src/SoulEngine/Window.cpp
-        src/SoulEngine/TriangleRenderer.cpp
-        src/SoulEngine/TriangleRenderer.h
-        src/SoulEngine/Resources.cpp
+        src/SoulEngine/Renderer.cpp
+        src/SoulEngine/Renderer.h
         src/SoulEngine/Resources.h
         src/SoulEngine/Resource.cpp
         src/SoulEngine/Resource.h
@@ -45,7 +44,6 @@ add_library(SoulEngine
         src/soulEngine/Texture.h
         src/SoulEngine/Model.cpp
         src/SoulEngine/Model.h
-        src/SoulEngine/Shader.cpp
         src/SoulEngine/Shader.h
         src/SoulEngine/Transform.cpp
         src/SoulEngine/Transform.h
@@ -61,8 +59,6 @@ target_link_libraries(SoulEngine Rendy)
 
 add_executable(Demo
         src/Demo/Main.cpp
-        src/Demo/Employee.cpp
-        src/Demo/Employee.h
 )
 
 

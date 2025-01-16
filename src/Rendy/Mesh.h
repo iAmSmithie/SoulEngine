@@ -8,6 +8,7 @@
 
 namespace Rendy
 {
+    //vertex structure
     struct Vertex
     {
         Vertex();
@@ -17,6 +18,7 @@ namespace Rendy
         glm::vec2 texcoord;
     };
 
+    //face structure
     struct Face
     {
         Vertex a;
@@ -24,6 +26,7 @@ namespace Rendy
         Vertex c;
     };
 
+    //mesh class
     class Mesh
     {
     public:

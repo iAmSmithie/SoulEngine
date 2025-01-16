@@ -1,25 +1,39 @@
-
 #pragma once
-
 #include <memory>
 
 namespace SoulEngine
 {
-	struct Entity;
-	struct Transform;
+    struct Entity;
+    struct Transform;
 
-	struct Component
-	{
-		virtual void on_initialize();
-		virtual void on_tick();
-		virtual void on_render();
-		std::shared_ptr<Entity> get_entity() const;
-		std::shared_ptr<Transform> get_transform();
-	private:
-		friend struct SoulEngine::Entity;
+    // Base class for components attached to entities
+    struct Component
+    {
+        //Initalise the component
+        virtual void on_initialize();
 
-		std::weak_ptr<Entity> m_Entity;
-		void Component::tick();
-		void render();
-	};
+        //Called on each game tick
+        virtual void on_tick();
+
+        //Called on each render tick
+        virtual void on_render();
+
+        //Returns the entity
+        std::shared_ptr<Entity> get_entity() const;
+
+        //Returns the transform
+        std::shared_ptr<Transform> get_transform();
+
+    private:
+        //Allows Entity to access private members
+        friend struct SoulEngine::Entity;
+
+        //Weak pointer to the entity to avoid circular references
+        std::weak_ptr<Entity> m_Entity;
+
+        //tick function
+        void Component::tick();  
+        //render function
+        void render();          
+    };
 }

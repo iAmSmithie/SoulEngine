@@ -10,6 +10,7 @@ namespace Rendy
     class Shader
     {
     public:
+        //shader program
         Shader();
         GLuint id();
         void uniform(const std::string& _name, const glm::mat4& _value);
@@ -17,6 +18,7 @@ namespace Rendy
 
     private:
         GLuint m_id;
+        //load shaders from the file
         std::string loadShaderFromFile(const std::string& filePath);
     };
 }

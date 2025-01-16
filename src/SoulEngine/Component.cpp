@@ -4,6 +4,7 @@
 
 namespace SoulEngine
 {
+	//functions for rendering, ticks and initialization
 	void Component::on_initialize() { }
 	void Component::on_tick() { }
 	void Component::on_render() { }
@@ -16,6 +17,7 @@ namespace SoulEngine
 	{
 		on_render();
 	}
+	//gets the entity that the component is attached to and checks if it is null
 	std::shared_ptr<Entity> Component::get_entity() const
 	{
 		auto entity = m_Entity.lock();
@@ -25,6 +27,7 @@ namespace SoulEngine
 		}
 		return entity;
 	}
+	//gets the transformation component of the entity that the component is attached to then checks if it is null
 	std::shared_ptr<Transform> Component::get_transform()
 	{
 		auto entity = get_entity();

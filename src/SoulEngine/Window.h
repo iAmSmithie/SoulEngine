@@ -5,11 +5,13 @@ namespace SoulEngine
 	struct Core;
 	struct Window
 	{
+		//window constructor and destructor
 		Window();
 		~Window();
 
 	private:
 		friend struct SoulEngine::Core;
+		//window initialization and shutdown
 		SDL_Window* m_window;
 		SDL_GLContext m_context;
 

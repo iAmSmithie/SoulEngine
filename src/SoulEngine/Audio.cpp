@@ -24,7 +24,7 @@ namespace SoulEngine
             throw std::runtime_error("Failed to open file '" + _path + "' for decoding");
         }
 
-        // Record the format required by OpenAL
+        //record the format required by OpenAL
         if (channels < 2)
         {
             _format = AL_FORMAT_MONO16;
@@ -34,20 +34,20 @@ namespace SoulEngine
             _format = AL_FORMAT_STEREO16;
         }
 
-        // Copy (# samples) * (1 or 2 channels) * (16 bits == 2 bytes == short)
+        //copy the samples from the stb_vorbis output buffer to a vector
         _buffer.resize(samples * channels * sizeof(short));
         memcpy(&_buffer.at(0), output, _buffer.size());
 
-        // Record the sample rate required by OpenAL
+        //record the sample rate required by OpenAL
         _freq = sampleRate;
 
-        // Clean up the read data
+        //clean up the data
         free(output);
     }
 
     void SoulEngine::Audio::on_load()
     {
-        //Create Buffer
+        //create the Buffer
         ALenum format = 0;
         ALsizei freq = 0;
         std::vector<unsigned char> bufferData;
@@ -59,6 +59,7 @@ namespace SoulEngine
     }
     void Audio::on_destroy()
 	{
+        //clean up the buffer and source
 		alDeleteBuffers(1, &id);
         alDeleteSources(1, &id);
         alcMakeContextCurrent(NULL);

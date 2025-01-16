@@ -1,10 +1,10 @@
 #ifndef SOULENGINE_SOULENGINE_
 #define SOULENGINE_SOULENGINE_
-
+//mega header file for the engine
 #include "core.h"
 #include "entity.h"
 #include "component.h"
-#include "TriangleRenderer.h"
+#include "Renderer.h"
 #include "Resources.h"
 #include "Texture.h"
 #include "Model.h"

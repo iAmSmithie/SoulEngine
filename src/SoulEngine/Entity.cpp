@@ -3,6 +3,7 @@
 
 namespace SoulEngine
 {
+	//tick and render all components
 	void Entity::tick()
 	{
 		for (size_t i = 0; i < m_Components.size(); i++)
@@ -18,6 +19,7 @@ namespace SoulEngine
 			m_Components[i]->render();
 		}
 	}
+	//return the tranform component
 	std::shared_ptr<Transform> Entity::get_transform()
 	{
 		return get_component<Transform>();

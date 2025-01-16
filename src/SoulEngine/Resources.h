@@ -10,7 +10,7 @@ namespace SoulEngine
 		template <typename T>
 		std::shared_ptr<T> load(const std::string& _path)
 		{
-			//Search for previously loaded resource
+			//search for previously loaded resource
 			for (size_t i = 0; i < m_resources.size(); ++i)
 			{
 				//Return it if found
@@ -19,7 +19,7 @@ namespace SoulEngine
 					return std::dynamic_pointer_cast<T>(m_resources.at(i));
 				}
 			}
-			//Create new instance, construct it and add to cache
+			//create new instance, construct it and add to cache
 			std::shared_ptr<T> rtn = std::make_shared<T>();
 			rtn->m_path = "../assets/" + _path;
 			rtn->load();
@@ -27,6 +27,7 @@ namespace SoulEngine
 			return rtn;
 		}
 	private:
+		//List of all resources
 		std::vector<std::shared_ptr<Resource> > m_resources;
 	};
 }

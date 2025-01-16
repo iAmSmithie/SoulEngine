@@ -6,6 +6,7 @@
 
 namespace SoulEngine
 {
+    //gets the entities transform and position then checks if the two entities are colliding
     bool BoxCollider::colliding(const BoxCollider& _other)
     {
         glm::vec3 a = get_entity()->get_transform()->get_position();
@@ -46,9 +47,8 @@ namespace SoulEngine
                     //Check if this collider collides with the other one
                     if (colliding(*other_collider)) 
                     {
-                        std::cout << "Collision detected between "
-                            << get_entity() << " and "
-                            << other_entity << std::endl;
+                        //collision detection debug cout
+                        std::cout << "Collision detected between "<< get_entity() << " and " << other_entity << std::endl;
                     }
                 }
             }
