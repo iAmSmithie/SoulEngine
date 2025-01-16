@@ -11,6 +11,7 @@
 #include "Transform.h"
 #include "AudioSource.h"
 #include "Audio.h"
+#include "Collision.h"
 
 #include <SDL2/SDL.h>
 #include <GL/glew.h>

@@ -53,6 +53,8 @@ add_library(SoulEngine
         src/SoulEngine/Audio.h
         src/SoulEngine/AudioSource.cpp
         src/SoulEngine/AudioSource.h
+        src/SoulEngine/Collision.cpp
+        src/SoulEngine/Collision.h
 )
 
 target_link_libraries(SoulEngine Rendy)

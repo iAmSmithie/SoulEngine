@@ -13,7 +13,7 @@ namespace SoulEngine
 		void on_initialize();
 		void set_audio(std::shared_ptr<Audio> audio);
 	private:
-		ALuint id;
+		ALuint id = 0;
 		std::shared_ptr<Audio> m_audio;
 	};
 }

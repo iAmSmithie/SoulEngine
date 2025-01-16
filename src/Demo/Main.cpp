@@ -26,14 +26,21 @@ int main(int argc, char* argv[])
 
 	std::shared_ptr<Texture> tex = c->get_resources()->load<Texture>("textures/OIAEEE");
 	std::shared_ptr<Model> mod = c->get_resources()->load<Model>("models/OIAE/source/OIAEE");
+	std::shared_ptr<BoxCollider> box = ent->add_component<BoxCollider>();
 
 	std::shared_ptr<Texture> tex2 = c->get_resources()->load<Texture>("textures/dingus");
 	std::shared_ptr<Model> mod2 = c->get_resources()->load<Model>("models/maxwell/source/smolcat");
+	std::shared_ptr<BoxCollider> box2 = ent2->add_component<BoxCollider>();
 
 	std::shared_ptr<Audio> audio = c->get_resources()->load<Audio>("audio/oiia");
 	std::shared_ptr<AudioSource> audioSource = ent->add_component<AudioSource>();
 	audioSource->set_audio(audio);
 
+	box->set_size(glm::vec3(50, 50, 50));
+	box2->set_size(glm::vec3(50, 50, 50));
+
+	ent->get_transform()->set_position(glm::vec3(0, 0, 0));
+	ent2->get_transform()->set_position(glm::vec3(0, -20, -150));
 
 	t->set_texture(tex);
 	t->set_model(mod);
@@ -41,7 +48,8 @@ int main(int argc, char* argv[])
 	t2->set_model(mod2);
 
 	ent->get_component<Transform>()->set_position(glm::vec3(0, 0, -50));
-	ent2->get_component<Transform>()->set_position(glm::vec3(-2, -3, -8));
+	ent2->get_component<Transform>()->set_rotation(glm::vec3(5, -35, 0));
+	ent2->get_component<Transform>()->set_position(glm::vec3(0, -20, -150));
 
 	c->start();
 

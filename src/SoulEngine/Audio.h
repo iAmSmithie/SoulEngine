@@ -11,6 +11,6 @@ namespace SoulEngine
 		void on_destroy();
     private:
         friend struct SoulEngine::AudioSource;
-        ALuint id;
+        ALuint id = 0;
     };
 }

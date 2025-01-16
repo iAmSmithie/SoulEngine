@@ -15,6 +15,8 @@ namespace SoulEngine
 		void start();
 		std::shared_ptr<Entity> add_entity();
 		std::shared_ptr<Resources> get_resources();
+		std::vector<std::shared_ptr<Entity>>& get_entities() { return m_entities; }
+
 
 	private:
 		std::shared_ptr<Window> m_window;

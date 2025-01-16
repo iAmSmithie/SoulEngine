@@ -32,6 +32,10 @@ namespace SoulEngine
 			}
 			return nullptr;
 		}
+		std::shared_ptr<Core> get_core() const
+		{
+			return m_Core.lock();
+		}
 	private:
 		friend struct SoulEngine::Core;
 
@@ -43,5 +47,8 @@ namespace SoulEngine
 
 		void tick();
 		void render();
+	public:
+		std::shared_ptr<Transform> get_transform();
+
 	};
 }

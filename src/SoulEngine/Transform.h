@@ -22,7 +22,7 @@ namespace SoulEngine
 			model = glm::scale(model, scale);
 			return model;
 		}
-		glm::vec3 get_position() const 
+		glm::vec3 Transform::get_position() const 
 		{ 
 			return position; 
 		}

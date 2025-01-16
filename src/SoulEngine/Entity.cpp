@@ -18,4 +18,9 @@ namespace SoulEngine
 			m_Components[i]->render();
 		}
 	}
+	std::shared_ptr<Transform> Entity::get_transform()
+	{
+		return get_component<Transform>();
+	}
+
 }
